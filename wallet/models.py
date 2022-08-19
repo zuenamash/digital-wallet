@@ -48,9 +48,7 @@ class Transaction(models.Model):
     wallet = models.ForeignKey("Wallet",on_delete=models.CASCADE,related_name='Transaction_wallet')
     transaction_description = models.CharField(max_length=270)
     transaction_amount = models.BigIntegerField()
-    transaction_charge = models.IntegerField()
     transaction_type = models.CharField(max_length=30)
-    # receipt = models.ForeignKey("Receipt",on_delete=models.CASCADE,related_name='Transaction_receipt')
     origin_account = models.ForeignKey("Wallet", on_delete=models.CASCADE,related_name='Transaction_origin')
     destination_account = models.ForeignKey("Wallet", on_delete=models.CASCADE,related_name='Transaction_destination')
 
