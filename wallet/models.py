@@ -77,7 +77,7 @@ class Notification(models.Model):
     title = models.CharField(max_length=20) 
 
 class Receipt(models.Model):
-    receipt_type= models.CharField(max_length = 20)
+    receipt_type= models.CharField(max_length = 22)
     date = models.DateTimeField()
     receipt_number= models.IntegerField()
     amount= models.IntegerField()
