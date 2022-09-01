@@ -58,9 +58,9 @@ class LoanAdmin(admin.ModelAdmin):
     search_fields = ('guaranter','issuer','loan_id',)
 admin.site.register(Loan,LoanAdmin)
 
-# class RewardAdmin(admin.ModelAdmin):
-#     list_display = ('transaction',)
-#     search_fields = ('transaction',)
+class RewardAdmin(admin.ModelAdmin):
+    list_display = ('transaction',)
+    search_fields = ('transaction',)
 admin.site.register(Reward)
 
 
