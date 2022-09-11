@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <th>
+          
+            <td> receipt_type</td>
+            <td>date</td>
+            <td>recipient_number</td>
+            <td>amount</td>
+            <td>transaction</td>
+            <td>receipt_file</td>
+        
+            {% for receipt in receipts%}
+            <tr>
+                <td>{{receipt.receipt_type}}</td>
+                <td>{{receipt.date}}</td>
+                <td>{{receipt. receipt_number}}</td>
+                <td>{{receipt. amount}}</td>
+                <td>{{receipt.transaction}}</td>
+                <td>{{receipt.receipt_file}}</td>  
+             
+            </tr>
+
+            {%endfor%}
+        </th>
+    </table>
+    
+</body>
+</html>

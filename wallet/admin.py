@@ -1,5 +1,3 @@
-
-# from msilib.schema import Class
 from django.contrib import admin
 from .models import Customer,Account,Transaction,Notification,Receipt,Reward
 from.models import Currency

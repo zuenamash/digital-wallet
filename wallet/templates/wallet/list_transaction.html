@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <th>
+            <td>message</td>
+            <td>wallet</td>
+            <td>transaction_description </td>
+            <td> transaction_amount</td>
+            <td>  transaction_type</td>
+            <td> origin_account</td>
+            <td>  destination_account</td>
+           
+            {% for transaction in wallets%}
+            <tr>
+                <td>{{transaction.message}}</td>
+                <td>{{transaction.wallet}}</td>
+                <td>{{transaction.transaction_description}}</td>
+                <td>{{transaction.transaction_amount}}</td>
+                <td>{{transaction.transaction_type}}</td>
+                <td>{{transaction.origin_account}}</td>
+                <td>{{transaction.destination_account}}</td>
+              
+             
+            </tr>
+
+            {%endfor%}
+        </th>
+    </table>
+
+    
+</body>
+</html>

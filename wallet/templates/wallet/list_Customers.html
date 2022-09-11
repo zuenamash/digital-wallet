@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <th>
+            <td>first_name</td>
+            <td>age</td>
+            <td>email</td>
+        
+            {% for customer in form%}
+            <tr>
+                <td>{{customer.first_name}}</td>
+                <td>{{customer.age}}</td>
+                <td>{{customer.email}}</td>
+              
+            </tr>
+
+            {%endfor%}
+        </th>
+    </table>
+    
+</body>
+</html>

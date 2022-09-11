@@ -1,8 +1,6 @@
 # from distutils.command.upload import upload
 from datetime import datetime
-import email
 # from email.headerregistry import Address
-from email.policy import default
 # from tkinter import CASCADE
 from django.db import models
 
@@ -78,7 +76,7 @@ class Notification(models.Model):
 
 class Receipt(models.Model):
     receipt_type= models.CharField(max_length = 23)
-    date = models.DateTimeField()
+    date= models.DateTimeField()
     receipt_number= models.IntegerField()
     amount= models.IntegerField()
     transaction = models.ForeignKey("Transaction",on_delete=models.CASCADE,related_name='Thirdparty_transaction')

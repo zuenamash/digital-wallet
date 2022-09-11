@@ -1,6 +1,6 @@
-import re
+from inspect import trace
 from django.shortcuts import render
-from wallet.models import Currency, Notification, ThirdParty, Wallet
+from wallet.models import Currency, Customer, Notification, ThirdParty, Wallet
 from .forms import CustomerRegistrationForm, RewardRegistrationForm, WalletRegistrationForm,CardRegistrationForm,ThirdpartyRegistrationForm,ReceiptRegistrationForm
 from .forms import CurrencyRegistrationForm, AccountRegistrationForm,TransactionRegistrationForm,NotificationRegistrationForm
 from .forms import LoanRegistrationForm
@@ -12,59 +12,177 @@ from .forms import LoanRegistrationForm
 # Then get our route via url.py
 
 def register_customer(request):
-    form = CustomerRegistrationForm()
+    if request.method == 'POST':
+        form = CustomerRegistrationForm(request.POST)
+        if form.is_valid():
+          form.save()
 
+    else:
+        form=CustomerRegistrationForm()
     return render (request,"wallet/register_customer.html",{"form":form})
+def list_Customers(request):
+    people= Customer.objects.all()
+    return render (request,"wallet/list_Customers.html",{"form":people})
+
 
 def register_currency(request):
-    form = CurrencyRegistrationForm()
+    if request.method == 'POST':
+        form = CurrencyRegistrationForm(request.POST)
+        if form.is_valid():
+          form.save()
 
+    else:
+       form = CurrencyRegistrationForm()
     return render (request,"wallet/register_currency.html",{"form" : form})
+def list_currency(request):
+    bills= Currency.objects.all()
+    return render (request,"wallet/list_currency.html",{"form":bills})
+
 
 def register_wallet(request):
-    form = WalletRegistrationForm()
+     if request.method == 'POST':
+        form =WalletRegistrationForm(request.POST)
+        if form.is_valid():
+          form.save()
 
-    return render (request,"wallet/register_wallet.html", {"form":form})
+     else:
+       form = WalletRegistrationForm()
+
+     return render (request,"wallet/register_wallet.html", {"form":form})
+def list_wallet(request):
+    wallets= Wallet.objects.all()
+    return render (request,"wallet/list_wallets.html",{"form":wallets})
+
 
 def register_account(request):
-    form = AccountRegistrationForm()
+      if request.method == 'POST':
+        form =AccountRegistrationForm(request.POST)
+      if form.is_valid():
+          form.save()
 
-    return render (request, "wallet/register_account.html", {"form":form})
+      else:
+        form = AccountRegistrationForm()
+      return render (request, "wallet/register_account.html", {"form":form})
+
+def list_account(request):
+    accounts= Wallet.objects.all()
+    return render (request,"wallet/list_account.html",{"form":accounts})
+
 
 def register_transaction(request):
-    form = TransactionRegistrationForm()
+     if request.method == 'POST':
+        form =TransactionRegistrationForm(request.POST)
+     if form.is_valid():
+          form.save()
 
-    return render (request, "wallet/register_transaction.html", {"form":form})
+     else:
+       form = TransactionRegistrationForm()
+     return render (request, "wallet/register_transaction.html", {"form":form})
+
+def list_transaction(request):
+    transactions= Wallet.objects.all()
+    return render (request,"wallet/list_transaction.html",{"form":transactions})
+
 
 def register_card(request):
-    form = CardRegistrationForm()
+    if request.method == 'POST':
+        form =CardRegistrationForm(request.POST)
+    if form.is_valid():
+          form.save()
 
+    else:
+       form = CardRegistrationForm()
     return render (request, "wallet/register_card.html", {"form":form})
 
-def register_thirdparty(request):
-    form = ThirdpartyRegistrationForm()
+def list_card(request):
+    cards= Wallet.objects.all()
+    return render (request,"wallet/list_card.html",{"form":cards})
 
+
+
+def register_thirdparty(request):
+    if request.method == 'POST':
+        form =ThirdpartyRegistrationForm(request.POST)
+    if form.is_valid():
+          form.save()
+
+    else:
+         form = ThirdpartyRegistrationForm()
     return render (request,"wallet/register_thirdparty.html", {"form":form})
 
-def register_notification(request):
-    form = NotificationRegistrationForm()
+def list_thirdparty(request):
+    thirdparty= Wallet.objects.all()
+    return render (request,"wallet/list_thirdparty.html",{"form":thirdparty})
 
+
+def register_notification(request):
+    if request.method == 'POST':
+        form =NotificationRegistrationForm(request.POST)
+    if form.is_valid():
+          form.save()
+
+    else:
+       form = NotificationRegistrationForm()
     return render (request, "wallet/register_notification.html", {"form":form})
 
+def list_notifications(request):
+    notify= Wallet.objects.all()
+    return render (request,"wallet/list_notification.html",{"form":notify})
+
+
 def register_receipt(request):
-    form = ReceiptRegistrationForm()
+    if request.method == 'POST':
+        form =ReceiptRegistrationForm(request.POST)
+    if form.is_valid():
+          form.save()
+
+    else:
+        form = ReceiptRegistrationForm()
 
     return render (request, "wallet/register_receipt.html", {"form":form})
 
+def list_receipt(request):
+    receipts= Wallet.objects.all()
+    return render (request,"wallet/list_receipt.html",{"form":receipts})
+
+
 def register_loan(request):
-    form = LoanRegistrationForm()
+    if request.method == 'POST':
+        form =LoanRegistrationForm(request.POST)
+    if form.is_valid():
+          form.save()
+
+    else:
+        form = LoanRegistrationForm()
 
     return render(request, "wallet/register_loan.html",{"form":form})
 
+def list_loan(request):
+    loans= Wallet.objects.all()
+    return render (request,"wallet/list_loan.html",{"form":loans})
+
+
+
 def register_reward(request):
-    form = RewardRegistrationForm()
+    if request.method == 'POST':
+        form =RewardRegistrationForm(request.POST)
+    if form.is_valid():
+          form.save()
+
+    else:
+     form = RewardRegistrationForm()
 
     return render (request, "wallet/register_reward.html", {"form":form})
 
+def list_rewards(request):
+    rewards= Wallet.objects.all()
+    return render (request,"wallet/list_reward.html",{"form":rewards})
 
 
+
+# geting Querys by rendering the list of all customers
+# def list_customers(request):
+#     Customer = Customer.object.all()
+
+#     return render(request,"wallet/customer_list.html,
+#     {"customers:customers"}")
