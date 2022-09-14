@@ -8,30 +8,30 @@
 </head>
 <body>
     <table>
-        <th>
-            <td>message</td>
-            <td>wallet</td>
-            <td>transaction_description </td>
-            <td> transaction_amount</td>
-            <td>  transaction_type</td>
-            <td> origin_account</td>
-            <td>  destination_account</td>
+      
+            <th> message </th>
+            <th> wallet </th>
+            <th> transaction_description </th>
+            <th> transaction_amount </th>
+            <th>  transaction_type </th>
+            <th> origin_account </th>
+            <th>  destination_account </th>
            
-            {% for transaction in wallets%}
+            {% for transaction in transactions %}
             <tr>
-                <td>{{transaction.message}}</td>
-                <td>{{transaction.wallet}}</td>
-                <td>{{transaction.transaction_description}}</td>
-                <td>{{transaction.transaction_amount}}</td>
-                <td>{{transaction.transaction_type}}</td>
-                <td>{{transaction.origin_account}}</td>
-                <td>{{transaction.destination_account}}</td>
+                <td>{{ transaction.message }}</td>
+                <td>{{ transaction.wallet }}</td>
+                <td>{{ transaction.transaction_description }}</td>
+                <td>{{ transaction.transaction_amount }}</td>
+                <td>{{ transaction.transaction_type }}</td>
+                <td>{{ transaction.origin_account }}</td>
+                <td>{{ transaction.destination_account }}</td>
               
              
             </tr>
 
             {%endfor%}
-        </th>
+     
     </table>
 
     

@@ -7,6 +7,7 @@ from .import views
 
 
 urlpatterns =[ 
+    
 path("register/",register_customer,name="registrationRegister"),
 path("registercurrency/",register_currency, name="registrationCurrency"),
 path("registerwallet/", register_wallet, name="registrationWallet"),
@@ -29,4 +30,5 @@ path ("notification/",list_notifications,name="notification_list"),
 path ("receipt/",list_receipt,name="receipt_list"),
 path ("loan/",list_loan,name="loan_list"),
 path ("reward/",list_rewards,name="reward_list"),
+
 ]

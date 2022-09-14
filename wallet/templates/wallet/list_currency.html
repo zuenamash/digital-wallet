@@ -9,21 +9,21 @@
 <body>
 
     <table>
-        <th>
-            <td>country</td>
-            <td>symbol</td>
-            <td>amount</td>
+       
+            <th>country</th>
+            <th>symbol</th>
+            <th>amount</th>
         
-            {% for Currency in bills%}
+            {% for bill in bills %}
             <tr>
-                <td>{{customer.country}}</td>
-                <td>{{customer.symbol}}</td>
-                <td>{{customer.amount}}</td>
+                <td>{{ bill.country }}</td>
+                <td>{{ bill.symbol }}</td>
+                <td>{{ bill.amount }}</td>
              
             </tr>
 
             {%endfor%}
-        </th>
+      
     </table>
     
 </body>

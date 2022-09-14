@@ -10,19 +10,19 @@
     <table>
         <th>
           
-            <td> receipt_type</td>
-            <td>date</td>
-            <td>recipient_number</td>
-            <td>amount</td>
-            <td>transaction</td>
-            <td>receipt_file</td>
+            <th> receipt_type</th>
+            <th>date</th>
+            <td>receipt_number</th>
+            <th>amount</th>
+            <th>transaction</th>
+            <th>receipt_file</th>
         
             {% for receipt in receipts%}
             <tr>
                 <td>{{receipt.receipt_type}}</td>
                 <td>{{receipt.date}}</td>
-                <td>{{receipt. receipt_number}}</td>
-                <td>{{receipt. amount}}</td>
+                <td>{{receipt.receipt_number}}</td>
+                <td>{{receipt.amount}}</td>
                 <td>{{receipt.transaction}}</td>
                 <td>{{receipt.receipt_file}}</td>  
              

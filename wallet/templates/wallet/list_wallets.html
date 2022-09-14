@@ -9,33 +9,33 @@
 <body>
     
     <table>
-        <th>
-            <td>balance</td>
-            <td>customer</td>
-            <td>amount</td>
-            <td>date_created</td>
-            <td>status</td>
-            <td>currency</td>
-            <td>history</td>
-            <td>pin</td>
+       
+            <th>balance</th>
+            <th>customer</th>
+            <th>amount</th>
+            <th>date_created</th>
+            <th>status</th>
+            <th>currency</th>
+            <th>history</th>
+            <th>pin</th>
         
         
-            {% for Wallet in wallets%}
+            {% for wallet in wallets%}
             <tr>
-                <td>{{Wallet.balance}}</td>
-                <td>{{Wallet.customer}}</td>
-                <td>{{Wallet.amount}}</td>
-                <td>{{Wallet.date_created}}</td>
-                <td>{{Wallet.status}}</td>
-                <td>{{Wallet.currency}}</td>
-                <td>{{Wallet.history}}</td>
-                <td>{{Wallet.pin}}</td>
+                <td>{{ wallet.balance }}</td>
+                <td>{{ wallet.customer }}</td>
+                <td>{{ wallet.amount }}</td>
+                <td>{{ wallet.date_created }}</td>
+                <td>{{ wallet.status }}</td>
+                <td>{{ wallet.currency }}</td>
+                <td>{{ wallet.history }}</td>
+                <td>{{ wallet.pin }}</td>
                
              
             </tr>
 
             {%endfor%}
-        </th>
+        
     </table>
 </body>
 </html>

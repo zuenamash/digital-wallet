@@ -8,18 +8,17 @@
 </head>
 <body>
     <table>
-        <th>
-            <td>card_number</td>
-            <td>card_type</td>
-            <td>expiry_date</td>
-            <td> security_code</td>
-            <td> date_of_issue</td>
-            <td> wallet</td>
-            <td>  account</td>
-            <td>issuer</td>
+        
+            <th>card_number</th>
+            <th>card_type</th>
+            <th>expiry_date</th>
+            <th> security_code</th>
+            <th> date_of_issue</th>
+            <th> wallet</th>
+            <th>  account</th>
+            <th>issuer</th>
           
             
-        
             {% for card in cards%}
             <tr>
                 <td>{{card.card_number}}</td>
@@ -35,7 +34,7 @@
             </tr>
 
             {%endfor%}
-        </th>
+       
     </table>
 
     

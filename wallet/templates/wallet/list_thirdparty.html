@@ -8,16 +8,16 @@
 </head>
 <body>
     <table>
-        <th>
-            <td>account</td>
-            <td>transaction_amount</td>
-            <td>currency</td>
+       
+            <th>account</th>
+            <th>transaction_amount</th>
+            <th>currency</th>
+            <th>date_of_issue</th>
             <td>date_of_issue</td>
-            <td>date_of_issue</td>
-            <td>wallet</td>
-            <td>issuer</td>
+            <th>wallet</th>
+            <th>issuer</th>
         
-            {% for thirdparty in thirdpartys%}
+            {% for thirdparty in thirdparty %}
             <tr>
                 <td>{{thirdparty.account }}</td>
                 <td>{{thirdparty.transaction_amount }}</td>
@@ -29,7 +29,7 @@
             </tr>
 
             {%endfor%}
-        </th>
+        
     </table>
 
     
