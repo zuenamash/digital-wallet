@@ -59,7 +59,7 @@ def list_wallet(request):
 def register_account(request):
       if request.method == 'POST':
         form =AccountRegistrationForm(request.POST)
-      if form.is_valid():
+        if form.is_valid():
           form.save()
 
       else:
@@ -74,7 +74,7 @@ def list_account(request):
 def register_transaction(request):
      if request.method == 'POST':
         form =TransactionRegistrationForm(request.POST)
-     if form.is_valid():
+        if form.is_valid():
           form.save()
 
      else:
@@ -89,7 +89,7 @@ def list_transaction(request):
 def register_card(request):
     if request.method == 'POST':
         form =CardRegistrationForm(request.POST)
-    if form.is_valid():
+        if form.is_valid():
           form.save()
 
     else:
@@ -104,7 +104,7 @@ def list_card(request):
 def register_thirdparty(request):
     if request.method == 'POST':
         form =ThirdpartyRegistrationForm(request.POST)
-    if form.is_valid():
+        if form.is_valid():
           form.save()
 
     else:
@@ -119,7 +119,7 @@ def list_thirdparty(request):
 def register_notification(request):
     if request.method == 'POST':
         form =NotificationRegistrationForm(request.POST)
-    if form.is_valid():
+        if form.is_valid():
           form.save()
 
     else:
@@ -134,7 +134,7 @@ def list_notifications(request):
 def register_receipt(request):
     if request.method == 'POST':
         form =ReceiptRegistrationForm(request.POST)
-    if form.is_valid():
+        if form.is_valid():
           form.save()
 
     else:
@@ -150,7 +150,7 @@ def list_receipt(request):
 def register_loan(request):
     if request.method == 'POST':
         form =LoanRegistrationForm(request.POST)
-    if form.is_valid():
+        if form.is_valid():
           form.save()
 
     else:
@@ -167,7 +167,7 @@ def list_loan(request):
 def register_reward(request):
     if request.method == 'POST':
         form =RewardRegistrationForm(request.POST)
-    if form.is_valid():
+        if form.is_valid():
           form.save()
 
     else:
